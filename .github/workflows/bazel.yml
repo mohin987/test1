@@ -153,9 +153,4 @@ jobs:
         #  git push -v -u --force sample main
         #env:
         #  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      - name: Publish debian packages
-        id: publish_agw_deb_pkg
-        env:
-          DEBIAN_META_INFO: deb.distribution=focal-1.9.0;deb.component=main;deb.architecture=amd64
-        run: |
-            ls package/
+    
