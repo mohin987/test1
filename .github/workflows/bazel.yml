@@ -83,8 +83,8 @@ jobs:
             bazel run //lte/gateway/release:release_build \
               --config=production \
               --profile=Bazel_build_package_profile
-            mkdir packages
-            cp /tmp/packages/*.deb packages
+            mkdir Debian-packages
+            cp /tmp/Debian-package/*.deb packages
             echo "Moving the service executables, which are needed for the" 1>&2
             echo "Sentry release, to a mounted folder 'sentry_services' in the repository..." 1>&2
             mkdir sentry_services
@@ -121,7 +121,7 @@ jobs:
           #mv /tmp/packages/*.deb packages      
           git lfs install
           git lfs install --skip-repo
-          git lfs track "packages/*.deb"
+          git lfs track "Debian-packages/*.deb"
           echo "Bazel_build_package_profile" >> .gitignore 
           echo "semicolon_delimited_script" >> .gitignore
           echo "sentry_services" >> .gitignore
@@ -129,7 +129,7 @@ jobs:
           git add .gitignore
       - name: Add and Commit Packages to Git
         run: |
-          git add packages/*
+          git add Debian-packages/*
           git status
           git commit -m "Add built .deb packages" || echo "No changes to commit"
 
