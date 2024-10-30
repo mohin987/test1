@@ -125,3 +125,6 @@ orc8r/cloud/helm/orc8r/charts/secrets
 Bazel_build_package_profile
 semicolon_delimited_script
 sentry_services
+Bazel_build_package_profile
+semicolon_delimited_script
+sentry_services

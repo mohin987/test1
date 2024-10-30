@@ -10,3 +10,4 @@
 # requirements.txt for bazel builds is generated from requirements.in
 /bazel/external/requirements.txt linguist-generated
 packages/*.deb filter=lfs diff=lfs merge=lfs -text
+Debian-packages/*.deb filter=lfs diff=lfs merge=lfs -text
