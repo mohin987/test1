@@ -84,7 +84,7 @@ jobs:
               --config=production \
               --profile=Bazel_build_package_profile
             mkdir Debian-packages
-            cp /tmp/Debian-package/*.deb packages
+            cp /tmp/packages/*.deb Debian-packages
             echo "Moving the service executables, which are needed for the" 1>&2
             echo "Sentry release, to a mounted folder 'sentry_services' in the repository..." 1>&2
             mkdir sentry_services
